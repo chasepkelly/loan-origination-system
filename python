@@ -1,0 +1,16 @@
+#!/opt/homebrew/bin/python3
+import sys
+import subprocess
+
+# Convert Python 2 print statements to Python 3 compatible
+if len(sys.argv) > 1 and sys.argv[1] == '-c':
+    code = sys.argv[2]
+    # Convert Python 2 print syntax to Python 3
+    if 'print "%s.%s.%s" % sys.version_info[:3]' in code:
+        code = 'import sys; print("%s.%s.%s" % sys.version_info[:3])'
+        exec(code)
+    else:
+        exec(code)
+else:
+    # For other Python invocations, just pass through
+    subprocess.call(['/opt/homebrew/bin/python3'] + sys.argv[1:])
