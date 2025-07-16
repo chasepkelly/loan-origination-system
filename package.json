@@ -16,7 +16,7 @@
     "test": "mocha -R spec --recursive content/container/decision-engine-service-container/test",
     "sass": "sass public/container/decision-engine-service-container/stylesheet/scss:public/container/decision-engine-service-container/stylesheet --style=compressed",
     "watch": "sass --watch public/container/decision-engine-service-container/stylesheet/scss:public/container/decision-engine-service-container/stylesheet",
-    "build": "cd content/container/decision-engine-service-container && node_modules/.bin/webpack --config config/webpack.config.js && cp -r public ../../../public/container/decision-engine-service-container && cd ../../../"
+    "build": "cd content/container/decision-engine-service-container && ../../../node_modules/.bin/webpack --config config/webpack.config.js && cp -r public ../../../public/container/decision-engine-service-container && cd ../../../"
   },
   "overrides": {
     "bcrypt": "^5.1.0",
