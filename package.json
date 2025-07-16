@@ -14,12 +14,13 @@
     "start": "node index.js --e",
     "deploy": "pm2 deploy otherdocs/deployment/ecosystem.json",
     "test": "mocha -R spec --recursive content/container/decision-engine-service-container/test",
-    "sass": "node-sass public/container/decision-engine-service-container/stylesheet/scss --output public/container/decision-engine-service-container/stylesheet/ compressed",
-    "watch": "node-sass --watch --include-path public/container/decision-engine-service-container/stylesheet/scss -r public/container/decision-engine-service-container/stylesheet/scss -o public/container/decision-engine-service-container/stylesheet",
+    "sass": "sass public/container/decision-engine-service-container/stylesheet/scss:public/container/decision-engine-service-container/stylesheet --style=compressed",
+    "watch": "sass --watch public/container/decision-engine-service-container/stylesheet/scss:public/container/decision-engine-service-container/stylesheet",
     "build": "cd content/container/decision-engine-service-container && node_modules/.bin/webpack --config config/webpack.config.js && cp -r public ../../../public/container/decision-engine-service-container && cd ../../../"
   },
   "overrides": {
-    "bcrypt": "^5.1.0"
+    "bcrypt": "^5.1.0",
+    "node-sass": "npm:sass@^1.32.0"
   },
   "dependencies": {
     "@digifi-los/comparison": "^0.0.2",
@@ -76,7 +77,7 @@
     "mongoose-sequence": "^5.3.1",
     "newrelic": "^2.2.1",
     "node-fetch": "^1.7.2",
-    "node-sass": "^4.11.0",
+    "sass": "^1.32.0",
     "npm": "^5.3.0",
     "numeral": "^2.0.6",
     "p-queue": "^2.3.0",
