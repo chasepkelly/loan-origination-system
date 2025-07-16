@@ -18,6 +18,9 @@
     "watch": "node-sass --watch --include-path public/container/decision-engine-service-container/stylesheet/scss -r public/container/decision-engine-service-container/stylesheet/scss -o public/container/decision-engine-service-container/stylesheet",
     "build": "cd content/container/decision-engine-service-container && node_modules/.bin/webpack --config config/webpack.config.js && cp -r public ../../../public/container/decision-engine-service-container && cd ../../../"
   },
+  "overrides": {
+    "bcrypt": "^5.1.0"
+  },
   "dependencies": {
     "@digifi-los/comparison": "^0.0.2",
     "@digifi-los/credit-process": "^0.0.1",
